@@ -169,10 +169,10 @@ Para executar os códigos localmente, você precisará:
  
 ### 7.1. Importando o Projeto
  
-1. Clone o repositório do Projeto [Blog Pessoal](https://github.com/rafaelq80/blogpessoal_spring_t82) dentro da pasta do *Workspace* do STS
+1. Clone o repositório do Projeto [Blog Pessoal](https://github.com/MyListon/blogpessoal) dentro da pasta do *Workspace* do STS
  
 ```bash
-git clone https://github.com/rafaelq80/blogpessoal_spring_t82.git
+git clone https://github.com/MyListon/blogpessoal.git
 ```
  
 2. **Abra o STS** e selecione a pasta do *Workspace* onde você clonou o repositório do projeto
@@ -198,7 +198,7 @@ git clone https://github.com/rafaelq80/blogpessoal_spring_t82.git
  
 > [!TIP]
 >
-> Ao acessar a URL `http://localhost:8080` em seu navegador, a interface do Swagger será carregada automaticamente, permitindo a visualização e a interação com os endpoints da API, bem como a consulta dos modelos de dados utilizados.
+> Ao acessar a URL `http://localhost:8081` em seu navegador, a interface do Swagger será carregada automaticamente, permitindo a visualização e a interação com os endpoints da API, bem como a consulta dos modelos de dados utilizados.
  
 <br />
  
@@ -251,5 +251,5 @@ Este repositório é parte de um projeto educacional, mas contribuições são s
  
 <br />
  
-Desenvolvido por [**Rafael**](https://github.com/rafaelq80)
+Desenvolvido por [**Myriam**](https://github.com/MyListon)
 Para dúvidas, sugestões ou colaborações, entre em contato via GitHub ou abra uma issue!
