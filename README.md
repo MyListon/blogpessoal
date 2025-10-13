@@ -9,12 +9,12 @@
 <br />
  
 <div align="center">
-<img src="https://img.shields.io/github/languages/top/rafaelq80/aulas_java_t82?style=flat-square" />
-<img src="https://img.shields.io/github/repo-size/rafaelq80/aulas_java_t82?style=flat-square" />
-<img src="https://img.shields.io/github/languages/count/rafaelq80/aulas_java_t82?style=flat-square" />
-<img src="https://img.shields.io/github/last-commit/rafaelq80/aulas_java_t82?style=flat-square" />
-<img src="https://img.shields.io/github/issues/rafaelq80/aulas_java_t82?style=flat-square" />
-<img src="https://img.shields.io/github/issues-pr/rafaelq80/aulas_java_t82?style=flat-square" />
+<img src="https://img.shields.io/github/languages/top/MyListon/blogpessoal?style=flat-square" />
+<img src="https://img.shields.io/github/repo-size/MyListon/blogpessoal?style=flat-square" />
+<img src="https://img.shields.io/github/languages/count/MyListon/blogpessoal?style=flat-square" />
+<img src="https://img.shields.io/github/last-commit/MyListon/blogpessoal?style=flat-square" />
+<img src="https://img.shields.io/github/issues/MyListon/blogpessoal?style=flat-square" />
+<img src="https://img.shields.io/github/issues-pr/MyListon/blogpessoal?style=flat-square" />
 <img src="https://img.shields.io/badge/status-construção-yellow" alt="Status: Em Construção">
  
 </div>
