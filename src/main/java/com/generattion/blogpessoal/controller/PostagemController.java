@@ -20,6 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.generattion.blogpessoal.model.Postagem;
 import com.generattion.blogpessoal.repository.PostagemRepository;
+import com.generattion.blogpessoal.repository.TemaRepository;
 
 import jakarta.validation.Valid;
 
@@ -30,6 +31,9 @@ public class PostagemController {
 	
 	@Autowired
 	private PostagemRepository postagemRepository;
+	
+	@Autowired
+	private TemaRepository temaRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Postagem>> getAll() {
@@ -59,20 +63,32 @@ public class PostagemController {
 	
 	@PostMapping
 	public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem) {
-		postagem.setId(null); // Garantir que o ID seja nulo para criar uma nova postagem
 		
-		return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
+		if (temaRepository.existsById(postagem.getTema().getId())) {
+
+			postagem.setId(null); // Garantir que o ID seja nulo para criar uma nova postagem
 		
+			return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
+		}
+		
+		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Tema não existe!", null);
 		// INSERT INTO tb_postagens (titulo, texto, data) VALUES (?, ?, ?);
 		
 	}
 	
 	@PutMapping
 	public ResponseEntity<Postagem> put(@Valid @RequestBody Postagem postagem) {
-		return postagemRepository.findById(postagem.getId())
-				.map(resposta -> ResponseEntity.status(HttpStatus.OK)
-						.body(postagemRepository.save(postagem)))
-				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+		if (postagemRepository.existsById(postagem.getId())) {
+			
+			if (temaRepository.existsById(postagem.getTema().getId()))
+				
+				return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
+			
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Tema não existe!", null);
+		}
+		
+		return ResponseEntity.notFound().build();
+		
 	}
 	
 	@ResponseStatus(HttpStatus.NO_CONTENT)
