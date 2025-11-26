@@ -8,26 +8,24 @@ import javax.crypto.SecretKey;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
-@Service
+@Component
 public class JwtService {
-	
-	@Value("${jwt.secret}")
-	private String secret;
+ 
 	private static final Duration EXPIRATION_DURATION = Duration.ofMinutes(60);
 	
 	private final SecretKey signingKey;
-	
-	public JwtService() {
+
+	public JwtService(@Value("${jwt.secret}") String secret) {
 		byte[] keyBytes = Decoders.BASE64.decode(secret);
 		this.signingKey = Keys.hmacShaKeyFor(keyBytes);
-	}
+    }
 	
 	private Claims extractAllClaims(String token) {
 		return Jwts.parser()
